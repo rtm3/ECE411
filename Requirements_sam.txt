@@ -1,0 +1,12 @@
+Wesley already laid out what we want the device to do, so here's my list of possible requirements:
+
+1. The system should respond to user input fairly quickly.
+2. The game will be represented with LEDs.
+3. The system will have two inputs, one to select one of two players and the other for the player to lock    their choice.
+4. The LEDs should be able to display the players choice for as long as the game is still going.
+5. The LEDs should indicate when a player has won the game.
+6. The battery life of the system should last for at least 5 games.
+7. The system should be able to reset itself after one of the players has won.
+8. The system should fit on a PCB baord between 1 and 16 in^2.
+9. The system should be easy to use for people of ages 6+.
+ 
