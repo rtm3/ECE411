@@ -9,4 +9,6 @@ Wesley already laid out what we want the device to do, so here's my list of poss
 7. The system should be able to reset itself after one of the players has won.
 8. The system should fit on a PCB baord between 1 and 16 in^2.
 9. The system should be easy to use for people of ages 6+.
- 
+
+These requirements are well layout following what wesley initially wrote
+10. The system should be able to detect the winner only after either one of the players has made three of their choice to allow for better and faster use of memory rather than checking everytime.
