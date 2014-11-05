@@ -6037,14 +6037,16 @@ This is the reduced ISP connector for AVR programming. Common on Arduino. This f
 <part name="P+3" library="supply1" deviceset="VCC" device=""/>
 <part name="P+4" library="supply1" deviceset="VCC" device=""/>
 <part name="P+5" library="supply1" deviceset="VCC" device=""/>
+<part name="BYCAP1" library="adafruit" deviceset="C-US" device="C0805"/>
+<part name="SUPPLY2" library="supply2" deviceset="GND" device=""/>
+<part name="SUPPLY5" library="supply2" deviceset="GND" device=""/>
+<part name="P+6" library="supply1" deviceset="VCC" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
 <text x="180.34" y="30.48" size="1.778" layer="91">Tic Tac Toe Game with LEDs</text>
-<text x="269.24" y="7.62" size="2.54" layer="92">3</text>
-<text x="10.16" y="200.66" size="2.1844" layer="91">Revision 3 is complete and ERC-error free
-We just need to add values to the components and figure out what to do with AREF</text>
+<text x="269.24" y="7.62" size="2.54" layer="92">4</text>
 </plain>
 <instances>
 <instance part="R1" gate="G$1" x="254" y="132.08" rot="R90"/>
@@ -6053,7 +6055,7 @@ We just need to add values to the components and figure out what to do with AREF
 <instance part="R4" gate="G$1" x="218.44" y="111.76" rot="R90"/>
 <instance part="R5" gate="G$1" x="236.22" y="50.8" rot="R90"/>
 <instance part="R6" gate="G$1" x="137.16" y="48.26"/>
-<instance part="BYCAP" gate="G$1" x="76.2" y="20.32"/>
+<instance part="BYCAP" gate="G$1" x="10.16" y="152.4"/>
 <instance part="POT" gate="G$1" x="246.38" y="66.04" rot="R270"/>
 <instance part="SELECT_BUTTON" gate="G$1" x="121.92" y="50.8" rot="R270"/>
 <instance part="SUPPLY1" gate="GND" x="104.14" y="12.7"/>
@@ -6083,6 +6085,10 @@ We just need to add values to the components and figure out what to do with AREF
 <instance part="P+3" gate="VCC" x="157.48" y="53.34"/>
 <instance part="P+4" gate="VCC" x="226.06" y="48.26"/>
 <instance part="P+5" gate="VCC" x="83.82" y="91.44"/>
+<instance part="BYCAP1" gate="G$1" x="27.94" y="152.4"/>
+<instance part="SUPPLY2" gate="GND" x="27.94" y="144.78"/>
+<instance part="SUPPLY5" gate="GND" x="10.16" y="144.78"/>
+<instance part="P+6" gate="VCC" x="10.16" y="165.1"/>
 </instances>
 <busses>
 </busses>
@@ -6107,9 +6113,14 @@ We just need to add values to the components and figure out what to do with AREF
 <pinref part="SUPPLY1" gate="GND" pin="GND"/>
 <wire x1="96.52" y1="30.48" x2="104.14" y2="30.48" width="0.1524" layer="91"/>
 <wire x1="104.14" y1="30.48" x2="104.14" y2="15.24" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="BYCAP1" gate="G$1" pin="2"/>
+<pinref part="SUPPLY2" gate="GND" pin="GND"/>
+</segment>
+<segment>
 <pinref part="BYCAP" gate="G$1" pin="2"/>
-<wire x1="76.2" y1="15.24" x2="104.14" y2="15.24" width="0.1524" layer="91"/>
-<junction x="104.14" y="15.24"/>
+<pinref part="SUPPLY5" gate="GND" pin="GND"/>
 </segment>
 </net>
 <net name="VCC" class="0">
@@ -6127,20 +6138,19 @@ We just need to add values to the components and figure out what to do with AREF
 <wire x1="157.48" y1="48.26" x2="157.48" y2="50.8" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U2" gate="G$1" pin="AVCC"/>
 <pinref part="U2" gate="G$1" pin="VCC"/>
-<wire x1="43.18" y1="162.56" x2="43.18" y2="160.02" width="0.1524" layer="91"/>
-<junction x="43.18" y="160.02"/>
-<wire x1="43.18" y1="160.02" x2="30.48" y2="160.02" width="0.1524" layer="91"/>
+<wire x1="43.18" y1="160.02" x2="35.56" y2="160.02" width="0.1524" layer="91"/>
 <pinref part="P+1" gate="VCC" pin="VCC"/>
+<wire x1="35.56" y1="160.02" x2="30.48" y2="160.02" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="160.02" x2="35.56" y2="157.48" width="0.1524" layer="91"/>
+<junction x="35.56" y="160.02"/>
+<pinref part="BYCAP1" gate="G$1" pin="1"/>
+<wire x1="35.56" y1="157.48" x2="27.94" y2="157.48" width="0.1524" layer="91"/>
+<wire x1="27.94" y1="157.48" x2="27.94" y2="154.94" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="BAT1" gate="G$1" pin="+"/>
-<pinref part="BYCAP" gate="G$1" pin="1"/>
-<wire x1="86.36" y1="30.48" x2="76.2" y2="30.48" width="0.1524" layer="91"/>
-<wire x1="76.2" y1="30.48" x2="76.2" y2="22.86" width="0.1524" layer="91"/>
-<wire x1="76.2" y1="30.48" x2="68.58" y2="30.48" width="0.1524" layer="91"/>
-<junction x="76.2" y="30.48"/>
+<wire x1="86.36" y1="30.48" x2="68.58" y2="30.48" width="0.1524" layer="91"/>
 <pinref part="P+2" gate="VCC" pin="VCC"/>
 <wire x1="68.58" y1="30.48" x2="68.58" y2="35.56" width="0.1524" layer="91"/>
 </segment>
@@ -6148,6 +6158,14 @@ We just need to add values to the components and figure out what to do with AREF
 <pinref part="HEADER" gate="G$1" pin="2"/>
 <pinref part="P+5" gate="VCC" pin="VCC"/>
 <wire x1="76.2" y1="88.9" x2="83.82" y2="88.9" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="U2" gate="G$1" pin="AVCC"/>
+<wire x1="43.18" y1="162.56" x2="10.16" y2="162.56" width="0.1524" layer="91"/>
+<pinref part="BYCAP" gate="G$1" pin="1"/>
+<wire x1="10.16" y1="162.56" x2="10.16" y2="154.94" width="0.1524" layer="91"/>
+<pinref part="P+6" gate="VCC" pin="VCC"/>
+<junction x="10.16" y="162.56"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -6496,10 +6514,4 @@ We just need to add values to the components and figure out what to do with AREF
 </errors>
 </schematic>
 </drawing>
-<compatibility>
-<note version="6.3" minversion="6.2.2" severity="warning">
-Since Version 6.2.2 text objects can contain more than one line,
-which will not be processed correctly with this version.
-</note>
-</compatibility>
 </eagle>
